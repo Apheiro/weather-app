@@ -1,0 +1,46 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+
+body {
+    margin: 0 !important;
+}
+
+.background {
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    z-index: -1;
+}
+
+.App {
+    width: 100vw;
+    height: 100vh;
+    /* background-color: rgba(255, 0, 0, 0.164); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.weatherAppContainer {
+    max-width: 1920px;
+    width: 100%;
+    height: 100%;
+    /* background-color: rgba(0, 255, 255, 0.137); */
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 40px;
+}
+
+.github {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    font-size: 17px;
+    width: fit-content;
+}
