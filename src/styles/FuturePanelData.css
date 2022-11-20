@@ -1,0 +1,79 @@
+.futurePanelData {
+    width: 100%;
+    max-height: 400px;
+    height: 100%;
+}
+
+.futurePanelDataCard {
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.futureDayDataCard {
+    flex-direction: column;
+    max-width: 220px;
+    max-height: 300px;
+    gap: 8px;
+}
+
+.futureDayDataCard img {
+    margin-inline: 20px;
+}
+
+.futureDayDataCard h3 {
+    font-size: 20px;
+    text-align: center;
+}
+
+.switchesBtnsContainer {
+    display: flex;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+.formatUnitForm {
+    backdrop-filter: blur(11px);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.formatTimeForm {
+    backdrop-filter: blur(11px);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.formatTimeForm input[type="radio"] {
+    display: none;
+}
+
+.formatUnitForm input[type="radio"] {
+    display: none;
+}
+
+.formatTimeForm label {
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.formatTimeForm input[type="radio"]:checked+label {
+    background-color: rgba(255, 255, 255, 0.137);
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.formatUnitForm label {
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.formatUnitForm input[type="radio"]:checked+label {
+    background-color: rgba(255, 255, 255, 0.137);
+    border-radius: 10px;
+    padding: 10px;
+}
