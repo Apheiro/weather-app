@@ -1,0 +1,114 @@
+.todayData {
+    display: flex;
+    justify-content: space-between;
+}
+
+.info {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(100px, 160px));
+    grid-template-rows: [first] 80px repeat(2, minmax(100px, 160px));
+    grid-template-areas:
+        ". header header"
+        "visibility humidity windSpeed"
+        "feelsLike pressure uvIndex";
+    gap: 20px;
+}
+
+.hour {
+    grid-area: header;
+    align-items: center;
+    justify-content: center;
+}
+
+.hour h2 {
+    font-size: 40px;
+}
+
+.iconsInfo {
+    min-width: 50px;
+    min-height: 50px;
+}
+
+.visibility {
+    grid-area: visibility;
+    align-items: center;
+    justify-content: center;
+}
+
+.humidity {
+    grid-area: humidity;
+    align-items: center;
+    justify-content: center;
+}
+
+.windSpeed {
+    grid-area: windSpeed;
+    align-items: center;
+    justify-content: center;
+}
+
+.feelsLike {
+    grid-area: feelsLike;
+    align-items: center;
+    justify-content: center;
+}
+
+.pressure {
+    grid-area: pressure;
+    align-items: center;
+    justify-content: center;
+}
+
+.uvIndex {
+    grid-area: uvIndex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cardInfoText {
+    gap: 15px;
+}
+
+.cardInfoText p {
+    font-size: 20px;
+}
+
+.cardStyle {
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(11px);
+    padding: 25px;
+    display: flex;
+    border-radius: 20px;
+    flex-direction: column;
+}
+
+.todayCard {
+    max-width: 440px;
+    max-height: 440px;
+    width: 100%;
+    height: 100%;
+    justify-content: space-between;
+}
+
+.todayInfo {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.todayWeather {
+    text-align: center;
+    font-size: 40px;
+}
+
+.todayTemperature {
+    font-size: 40px;
+}
+
+.todayLocation {
+    font-size: 20px;
+}
+
+img {
+    margin-inline: 40px;
+}
