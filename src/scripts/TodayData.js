@@ -1,69 +1,67 @@
 import React from 'react';
-import '../styles/TodayData.css'
-import {
-    cloud, cRain, cElectricStorm,
-    cSnow, cWind, sun, sCloud, sRain,
-    sSnow, sElectricStorm, sWind, moon,
-    mCloud, mRain, mSnow, mElectricStorm, mWind
-} from '../assets/imports'
+import '../styles/TodayData.css';
+import { format } from 'date-fns';
 import {
     IconWiThermometer, IconSpeedometer,
     IconWiRaindrop, IconWind,
-    IconEyeFill, IconWiHot,
+    IconEyeFill, IconWiHot, IconSearch
 } from '../assets/imports'
 class TodayData extends React.Component {
     constructor(props) {
         super(props)
     }
-
     render() {
+        const { data, changeLocation, setLocation } = this.props
         return (
             <div className='todayData'>
                 <div className='todayCard cardStyle'>
                     <div className='todayInfo'>
-                        <h3 className='todayLocation'>Salta, Argentina <br />Thursday, 17th Nov '22</h3>
-                        <h2 className='todayTemperature'>40°C</h2>
+                        <h3 className='todayLocation'>{data.state}, {data.country}<br />{format(new Date(), 'PPPP')}</h3>
+                        <h2 className='todayTemperature'>{`${data.temp}`.slice(0, 2)}°C</h2>
                     </div>
-                    <img src={mRain} alt="moon1" />
-                    <h1 className='todayWeather'>Slightly Cloudy</h1>
+                    <img src={data.weatherImage} alt="moon1" />
+                    <h1 className='todayWeather'>{data.description}</h1>
                 </div>
+                <form className='searchFromCard' action="" onSubmit={changeLocation}>
+                    <input type="search" placeholder='Search your city' name="" id="inputForm" onChange={setLocation} />
+                    <button type="submit"><IconSearch width="100%" height="100%" /></button>
+                </form>
                 <div className='info'>
                     <div className='hour cardStyle'>
                         <h2>15:38:24 AM</h2>
                     </div>
                     <div className='visibility cardStyle cardInfoText'>
-                        <p>5km</p>
+                        <p>{`${data.visibility}`.slice(0, 1)} km</p>
                         <IconEyeFill className='iconsInfo' />
                         <p>Visibility</p>
                     </div>
                     <div className='humidity cardStyle cardInfoText'>
-                        <p>50%</p>
+                        <p>{data.humidity}%</p>
                         <IconWiRaindrop className='iconsInfo' />
                         <p>Humidity</p>
                     </div>
                     <div className='windSpeed cardStyle cardInfoText'>
-                        <p>5.4 k/m</p>
+                        <p>{data.wind_speed} k/m</p>
                         <IconWind className='iconsInfo' />
                         <p>Wind speed</p>
                     </div>
                     <div className='feelsLike cardStyle cardInfoText'>
-                        <p>25°C</p>
+                        <p>{`${data.feels_like}`.slice(0, 2)}°C</p>
                         <IconWiThermometer className='iconsInfo' />
                         <p>Feels like</p>
                     </div>
                     <div className='pressure cardStyle cardInfoText'>
-                        <p>1011mb</p>
+                        <p>{data.pressure}mb</p>
                         <IconSpeedometer className='iconsInfo' />
                         <p>Pressure</p>
                     </div>
                     <div className='uvIndex cardStyle cardInfoText'>
-                        <p>0</p>
+                        <p>{data.uvi}</p>
                         <IconWiHot className='iconsInfo' />
                         <p>UV index</p>
                     </div>
                 </div>
             </div>
-
         );
     };
 };

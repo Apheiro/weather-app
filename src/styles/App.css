@@ -1,8 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@100;300;400;500;700;800;900&display=swap');
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
     color: white;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-weight: 800;
 }
 
 body {
@@ -11,8 +15,8 @@ body {
 
 .background {
     position: absolute;
-    height: 100vh;
-    width: 100vw;
+    height: 100%;
+    width: 100%;
     z-index: -1;
 }
 
@@ -20,9 +24,17 @@ body {
     width: 100vw;
     height: 100vh;
     /* background-color: rgba(255, 0, 0, 0.164); */
-    display: flex;
     justify-content: center;
+}
+
+.appContainer {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
     align-items: center;
+    padding: 40px;
+    gap: 40px;
 }
 
 .weatherAppContainer {
@@ -32,11 +44,12 @@ body {
     /* background-color: rgba(0, 255, 255, 0.137); */
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     gap: 40px;
-    padding: 40px;
 }
 
 .github {
+    align-self: start;
     display: flex;
     align-items: center;
     gap: 10px;

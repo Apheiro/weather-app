@@ -1,6 +1,7 @@
 .todayData {
     display: flex;
     justify-content: space-between;
+    gap: 20px;
 }
 
 .info {
@@ -12,12 +13,14 @@
         "visibility humidity windSpeed"
         "feelsLike pressure uvIndex";
     gap: 20px;
+    min-width: 426px;
 }
 
 .hour {
     grid-area: header;
     align-items: center;
     justify-content: center;
+    white-space: nowrap;
 }
 
 .hour h2 {
@@ -67,10 +70,12 @@
 
 .cardInfoText {
     gap: 15px;
+    flex-direction: column;
 }
 
 .cardInfoText p {
     font-size: 20px;
+    white-space: nowrap;
 }
 
 .cardStyle {
@@ -79,11 +84,39 @@
     padding: 25px;
     display: flex;
     border-radius: 20px;
-    flex-direction: column;
+}
+
+.searchFromCard {
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(11px);
+    padding: 15px;
+    display: flex;
+    border-radius: 20px;
+    max-height: 65px;
+    max-width: 350px;
+    width: 100%;
+    align-items: center;
+}
+
+.searchFromCard input {
+    outline: none;
+    background: none;
+    border: none;
+    width: 100%;
+    height: 100%;
+    font-size: 20px;
+}
+
+.searchFromCard button {
+    background: none;
+    border: none;
+    width: 45px;
+    height: 45px;
 }
 
 .todayCard {
-    max-width: 440px;
+    flex-direction: column;
+    max-width: 520px;
     max-height: 440px;
     width: 100%;
     height: 100%;
@@ -109,6 +142,8 @@
     font-size: 20px;
 }
 
-img {
-    margin-inline: 40px;
+.todayCard img {
+    align-self: center;
+    max-width: 310px;
+    max-height: 230px;
 }
