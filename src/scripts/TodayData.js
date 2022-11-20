@@ -9,7 +9,20 @@ import {
 class TodayData extends React.Component {
     constructor(props) {
         super(props)
+        this.state = {
+            hour: ''
+        }
     }
+
+    componentDidMount() {
+        setInterval(() => {
+            const hour = format(new Date(), 'hh:mm:ss a')
+            this.setState({
+                hour: hour
+            })
+        }, 1000)
+    }
+
     render() {
         const { data, changeLocation, setLocation } = this.props
         return (
@@ -17,7 +30,7 @@ class TodayData extends React.Component {
                 <div className='todayCard cardStyle'>
                     <div className='todayInfo'>
                         <h3 className='todayLocation'>{data.state}, {data.country}<br />{format(new Date(), 'PPPP')}</h3>
-                        <h2 className='todayTemperature'>{`${data.temp}`.slice(0, 2)}°C</h2>
+                        <h2 className='todayTemperature'>{data.temp}</h2>
                     </div>
                     <img src={data.weatherImage} alt="moon1" />
                     <h1 className='todayWeather'>{data.description}</h1>
@@ -28,7 +41,7 @@ class TodayData extends React.Component {
                 </form>
                 <div className='info'>
                     <div className='hour cardStyle'>
-                        <h2>15:38:24 AM</h2>
+                        <h2>{this.state.hour}</h2>
                     </div>
                     <div className='visibility cardStyle cardInfoText'>
                         <p>{`${data.visibility}`.slice(0, 1)} km</p>
@@ -41,17 +54,17 @@ class TodayData extends React.Component {
                         <p>Humidity</p>
                     </div>
                     <div className='windSpeed cardStyle cardInfoText'>
-                        <p>{data.wind_speed} k/m</p>
+                        <p>{data.wind_speed}</p>
                         <IconWind className='iconsInfo' />
                         <p>Wind speed</p>
                     </div>
                     <div className='feelsLike cardStyle cardInfoText'>
-                        <p>{`${data.feels_like}`.slice(0, 2)}°C</p>
+                        <p>{data.feels_like}</p>
                         <IconWiThermometer className='iconsInfo' />
                         <p>Feels like</p>
                     </div>
                     <div className='pressure cardStyle cardInfoText'>
-                        <p>{data.pressure}mb</p>
+                        <p>{data.pressure} hPa</p>
                         <IconSpeedometer className='iconsInfo' />
                         <p>Pressure</p>
                     </div>

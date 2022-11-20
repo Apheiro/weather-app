@@ -12,18 +12,31 @@
 
 .futureDayDataCard {
     flex-direction: column;
+    width: 100%;
     max-width: 220px;
     max-height: 300px;
-    gap: 8px;
+    gap: 10px;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .futureDayDataCard img {
-    margin-inline: 20px;
+    max-width: 130px;
+    max-height: 90px;
+}
+
+.futureDayDataCard div {
+    white-space: nowrap;
 }
 
 .futureDayDataCard h3 {
     font-size: 20px;
     text-align: center;
+}
+
+.futureDayDataCard h2 {
+    align-self: start;
+    white-space: nowrap;
 }
 
 .switchesBtnsContainer {
@@ -46,11 +59,8 @@
     align-items: center;
 }
 
+.formatUnitForm input[type="radio"],
 .formatTimeForm input[type="radio"] {
-    display: none;
-}
-
-.formatUnitForm input[type="radio"] {
     display: none;
 }
 
@@ -76,4 +86,10 @@
     background-color: rgba(255, 255, 255, 0.137);
     border-radius: 10px;
     padding: 10px;
+}
+
+.futureDataCardsContainer {
+    display: flex;
+    gap: 25px;
+    overflow-x: overlay;
 }

@@ -7,6 +7,13 @@
     color: white;
     font-family: 'M PLUS Rounded 1c', sans-serif;
     font-weight: 800;
+    scrollbar-width: thin;
+    /* user-select: none; */
+}
+
+html {
+    overflow-y: overlay;
+    overflow-x: overlay;
 }
 
 body {
@@ -56,4 +63,27 @@ body {
     text-decoration: none;
     font-size: 17px;
     width: fit-content;
+}
+
+/* Works on Chrome, Edge, and Safari */
+::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+    transition: height 2s ease-in-out;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.137);
+    border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.39);
+    height: 10px;
+    border-radius: 20px;
+}
+
+*:hover::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
 }
