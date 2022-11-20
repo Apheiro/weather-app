@@ -5,6 +5,7 @@ import cRain from './imgs/cloudly/cloud1.png'
 import cElectricStorm from './imgs/cloudly/cloud3.png'
 import cSnow from './imgs/cloudly/cloud2.png'
 import cWind from './imgs/cloudly/cloud4.png'
+import cBroken from './imgs/cloudly/cloud5.png'
 
 import sun from './imgs/day/sun.png'
 import sCloud from './imgs/day/sun1.png'
@@ -12,6 +13,7 @@ import sRain from './imgs/day/sun2.png'
 import sSnow from './imgs/day/sun3.png'
 import sElectricStorm from './imgs/day/sun4.png'
 import sWind from './imgs/day/sun5.png'
+import sShowerRain from './imgs/day/sun6.png'
 
 import moon from './imgs/night/moon.png'
 import mCloud from './imgs/night/moon1.png'
@@ -19,6 +21,8 @@ import mRain from './imgs/night/moon2.png'
 import mSnow from './imgs/night/moon3.png'
 import mElectricStorm from './imgs/night/moon4.png'
 import mWind from './imgs/night/moon5.png'
+import mShowerRain from './imgs/night/moon6.png'
+
 
 function IconSquareGithub(props) {
     return (
@@ -141,7 +145,8 @@ export {
     cSnow, cWind, sun, sCloud,
     sRain, sSnow, sElectricStorm,
     sWind, moon, mCloud, mRain, mSnow,
-    mElectricStorm, mWind,
+    mElectricStorm, mWind, cBroken,
+    sShowerRain, mShowerRain,
     IconSquareGithub, IconWiThermometer,
     IconWiRaindrop, IconWind,
     IconEyeFill, IconWiHot,
