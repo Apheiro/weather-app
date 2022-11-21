@@ -1,5 +1,6 @@
 import react from 'react'
 import '../styles/PopupInfo.css'
+import uniqid from 'uniqid'
 import { fromUnixTime, format } from 'date-fns'
 // import format from 'date-fns/format'
 import {
@@ -28,18 +29,17 @@ class PopupInfo extends react.Component {
 
 
     render() {
-        const { uniqid, formatDate, formatDateType } = this.props;
+        const { uniqKey, formatDate, formatDateType } = this.props;
 
         return (
 
             < div className='popupInfo' onClick={this.props.removePopup} >
                 {
-
                     formatDate.map((element) => {
                         if (formatDateType == 'daily') {
-                            if (element.uniqid == uniqid) {
+                            if (element.uniqid == uniqKey) {
                                 return (
-                                    <div className='moreInfoCard'>
+                                    <div key={uniqid()} className='moreInfoCard'>
                                         <div className='basicInfo'>
                                             <h2>{format(fromUnixTime(element.dt), 'PPPP')}</h2>
                                             <img src={this.imagesID[element.weather[0].icon]} alt="" />
@@ -54,16 +54,14 @@ class PopupInfo extends react.Component {
                                             <p><IconMoon />temp night: {element.temp.night}</p>
                                             <p><IconWiHot />uv index: {element.uvi}</p>
                                         </div>
-
-
                                     </div>
                                 )
 
                             }
                         } else if (formatDateType == 'hourly') {
-                            if (element.uniqid == uniqid) {
+                            if (element.uniqid == uniqKey) {
                                 return (
-                                    <div className='moreInfoCard'>
+                                    <div key={uniqid()} className='moreInfoCard'>
                                         <div className='basicInfo'>
                                             <h2>{format(fromUnixTime(element.dt), 'hh:mm a')}</h2>
                                             <img src={this.imagesID[element.weather[0].icon]} alt="" />
@@ -82,10 +80,8 @@ class PopupInfo extends react.Component {
 
                                     </div>
                                 )
-
                             }
                         }
-
                     })
                 }
 

@@ -24,6 +24,9 @@ import mWind from './imgs/night/moon5.png'
 import mShowerRain from './imgs/night/moon6.png'
 
 
+
+
+
 function IconSquareGithub(props) {
     return (
         <svg
@@ -130,7 +133,7 @@ function IconSearch(props) {
     return (
         <svg
             viewBox="0 0 512 512"
-            fill="currentColor"
+            fill="white"
             height="1em"
             width="1em"
             {...props}

@@ -30,9 +30,10 @@ class FuturePanelData extends React.Component {
     }
 
     changeUnit(e) {
-        this.props.updateUnit(e.target.value);
-        console.log(e.target.value);
-        console.log(e);
+        this.props.changeUnitMeasure(e.target.value);
+        this.props.getData()
+        // console.log(e.target.value);
+        // console.log(e);
     }
 
     removePopup(e) {
@@ -42,29 +43,21 @@ class FuturePanelData extends React.Component {
     addPopup(e) {
         this.setState({
             popupShow: true,
-            popupAttribute: e.target.getAttribute('id')
+            popupAttribute: e.currentTarget.getAttribute('id')
         })
     }
-
 
     changeFormat(e) {
         this.setState({
             format: e.target.value
         })
-        setTimeout(() => {
-            console.log(this.state.format)
-        }, 1);
     }
 
     render() {
-        const { daily, hourly } = this.props
-        console.log(daily)
-
         return (
             <div className='futurePanelData'>
-                {this.state.popupShow ? <PopupInfo formatDateType={this.state.format} formatDate={this.props[this.state.format]} removePopup={this.removePopup} uniqid={this.state.popupAttribute} /> : null}
+                {this.state.popupShow ? <PopupInfo formatDateType={this.state.format} formatDate={this.props[this.state.format]} removePopup={this.removePopup} uniqKey={this.state.popupAttribute} /> : null}
                 <div className='futurePanelDataCard cardStyle'>
-
                     <div className='switchesBtnsContainer'>
                         <form action="" className='formatUnitForm'>
                             <input type="radio" value='imperial' name="formatUnit" id="fahrenheit" onChange={this.changeUnit} />
@@ -85,7 +78,7 @@ class FuturePanelData extends React.Component {
                             this.props[this.state.format].map((day) => {
                                 if (this.state.format == 'daily') {
                                     return (
-                                        <div key={`${day.uniqid}`} id={`${day.uniqid}`} className='futureDayDataCard cardStyle' onClick={this.addPopup}>
+                                        <div key={`${day.uniqid}`} id={`${day.uniqid}`} className='futureDayDataCard' onClick={this.addPopup}>
                                             <h2>{format(fromUnixTime(day.dt), 'EEEE dd')}</h2>
                                             <img src={this.imagesID[day.weather[0].icon]} alt="" />
                                             <h3>{day.temp.min} - {day.temp.max}</h3>
@@ -97,7 +90,7 @@ class FuturePanelData extends React.Component {
                                         </div>
                                     )
                                 } else if (this.state.format == 'hourly') {
-                                    return <div key={`${day.uniqid}`} id={`${day.uniqid}`} className='futureDayDataCard cardStyle' onClick={this.addPopup} >
+                                    return <div key={`${day.uniqid}`} id={`${day.uniqid}`} className='futureDayDataCard' onClick={this.addPopup} >
                                         <h2>{format(fromUnixTime(day.dt), 'hh:mm a')}</h2>
                                         <img src={this.imagesID[day.weather[0].icon]} alt="" />
                                         <h3>{day.temp}</h3>
