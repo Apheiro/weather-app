@@ -81,12 +81,18 @@ class App extends React.Component {
         day.uniqid = uniqid()
         day.temp.min = `${Math.round(day.temp.min)}${this.unitsOfMeasure[unitOfMeasure].tempUnit}`
         day.temp.max = `${Math.round(day.temp.max)}${this.unitsOfMeasure[unitOfMeasure].tempUnit}`
+        day.temp.day = `${Math.round(day.temp.day)}${this.unitsOfMeasure[unitOfMeasure].tempUnit}`
+        day.temp.night = `${Math.round(day.temp.night)}${this.unitsOfMeasure[unitOfMeasure].tempUnit}`
         day.wind_speed = `${day.wind_speed} ${this.unitsOfMeasure[unitOfMeasure].windSpeedUnit}`
       })
       weatherDataJson.hourly.forEach((hour) => {
         hour.uniqid = uniqid()
         hour.temp = `${Math.round(hour.temp)}${this.unitsOfMeasure[unitOfMeasure].tempUnit}`
+        hour.feels_like = `${Math.round(hour.feels_like)}${this.unitsOfMeasure[unitOfMeasure].tempUnit}`
+        hour.dew_point = `${Math.round(hour.dew_point)}${this.unitsOfMeasure[unitOfMeasure].tempUnit}`
+        hour.visibility = `${hour.visibility} m`
         hour.wind_speed = `${hour.wind_speed} ${this.unitsOfMeasure[unitOfMeasure].windSpeedUnit}`
+        hour.pop = `${hour.pop * 100}%`
       })
 
       this.setState({
