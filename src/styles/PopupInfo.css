@@ -1,0 +1,76 @@
+.popupInfo {
+    position: absolute;
+    backdrop-filter: blur(5px);
+    background-color: rgba(0, 0, 0, 0.336);
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    padding: 40 px;
+}
+
+.moreInfoCard {
+    backdrop-filter: blur(11px);
+    border-radius: 20px;
+    max-width: 700px;
+    max-height: 500px;
+    width: 100%;
+    height: 100%;
+    padding: 25px;
+    display: flex;
+}
+
+.moreInfoCard img {
+    max-width: 270px;
+    max-height: 200px;
+}
+
+.basicInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    justify-content: space-between;
+    width: 50%;
+}
+
+.basicInfo h2 {
+    font-size: 25px;
+}
+
+.basicInfo p {
+    font-size: 25px;
+}
+
+.moreInfo {
+    background-color: rgba(0, 0, 0, 0.356);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 50%;
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    justify-content: space-between;
+}
+
+.moreInfo h2 {
+    align-self: center;
+    font-size: 30px;
+}
+
+.moreInfo p {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 20px;
+}
+
+.moreInfo svg {
+    width: 50px;
+    height: 50px;
+}
