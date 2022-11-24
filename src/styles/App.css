@@ -8,6 +8,7 @@
     font-weight: 800;
     scrollbar-width: thin;
     user-select: none;
+    -webkit-tap-highlight-color: transparent;
 }
 
 html {
