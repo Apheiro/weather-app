@@ -7,8 +7,6 @@ import uniqid from 'uniqid'
 import LoadingScreen from './LoadingScreen'
 import { AnimatePresence } from 'framer-motion'
 
-
-
 import {
   cloud, sun, sCloud,
   sRain, sSnow, sElectricStorm,

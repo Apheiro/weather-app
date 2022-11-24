@@ -177,7 +177,7 @@
 
     .infoGrid {
         gap: 10px;
-        grid-template-columns: repeat(auto-fill, minmax(95px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(101px, 1fr));
     }
 
     .cardInfoText p {
