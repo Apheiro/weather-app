@@ -1,7 +1,7 @@
 .graphicContainer {
-    position: absolute;
+    position: fixed;
     backdrop-filter: blur(5px);
-    background-color: rgba(0, 0, 0, 0.336);
+    background-color: rgba(0, 0, 0, 0.514);
     top: 0px;
     left: 0px;
     bottom: 0px;

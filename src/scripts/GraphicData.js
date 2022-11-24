@@ -1,47 +1,91 @@
 import react from 'react'
 import '../styles/GraphicData.css'
-import { AreaChart, Area, CartesianGrid, XAxis, YAxis, Tooltip } from 'recharts';
-
-import {
-    IconWiHot,
-    IconWiSunrise, IconWiSunset,
-    IconMoon, IconSun, IconWiRain, IconWiCloud,
-    IconEye, IconWiThermometerExterior
-} from '../assets/imports'
-
+import { linearGradientDef } from '@nivo/core'
+import { ResponsiveLine } from '@nivo/line'
+import { motion } from 'framer-motion'
 class GraphicData extends react.Component {
     constructor(props) {
         super(props)
+        this.initial = {
+            scale: 0.6,
+            opacity: 0,
+        }
+        this.enter = {
+            scale: 1,
+            opacity: 1,
+            transition: {
+                duration: 0.4,
+                ease: [0.60, -0.67, 0.30, 1.67]
+            }
+        }
+        this.exit = {
+            scale: 0.6,
+            opacity: 0,
+            transition: {
+                duration: 0.4,
+                ease: [0.60, -0.67, 0.30, 1.67]
+            }
+        }
     }
 
-
     render() {
-        const { removeGraphicFunction, showGraphicName, names, data } = this.props
+        const { removeGraphicFunction, showGraphicName, names, data, theme } = this.props
         return (
-            < div className='graphicContainer' onClick={removeGraphicFunction}>
-                <div className='graphicContainerCard'>
-                    <h2>{names[showGraphicName]}: Last 48 hours</h2>
-                    <AreaChart width={600} height={300} data={data} margin={{ top: 5, right: 20, bottom: 5, left: 0 }}>
-                        <defs>
-                            <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
-                                <stop offset="5%" stopColor="#8884d8" stopOpacity={0.8} />
-                                <stop offset="95%" stopColor="#8884d8" stopOpacity={0} />
-                            </linearGradient>
-                            <linearGradient id="colorPv" x1="0" y1="0" x2="0" y2="1">
-                                <stop offset="5%" stopColor="#82ca9d" stopOpacity={0.8} />
-                                <stop offset="95%" stopColor="#82ca9d" stopOpacity={0} />
-                            </linearGradient>
-                        </defs>
-                        <CartesianGrid stroke="transparent" strokeDasharray="5 5" />
-                        <XAxis dataKey="hour" />
-                        <YAxis />
-                        <Tooltip contentStyle={{ backgroundColor: 'black', background: 'black' }} />
+            < motion.div key='graphicData' className='graphicContainer' onClick={removeGraphicFunction} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
+                <motion.div className='graphicContainerCard' initial={this.initial} animate={this.enter} exit={this.exit}>
+                    <ResponsiveLine
+                        data={data}
+                        theme={theme}
+                        margin={{ top: 30, right: 50, bottom: 70, left: 50 }}
+                        xScale={{
+                            type: 'point',
+                        }}
+                        yScale={{
+                            type: 'linear',
+                            // min: 'auto',
+                            // max: 'auto',
+                            stacked: true,
+                            reverse: false
+                        }}
+                        colors={{ scheme: 'pink_yellowGreen' }}
+                        yFormat=" >-.2f"
+                        curve="monotoneX"
+                        axisTop={null}
+                        axisRight={null}
+                        axisBottom={{
+                            orient: 'bottom',
+                            legend: `${names[showGraphicName]}: next 24 hours`,
+                            legendPosition: 'middle',
+                            tickSize: 5,
+                            tickPadding: 5,
+                            tickRotation: 90,
+                            legendOffset: 65,
+                        }}
+                        axisLeft={{
+                            orient: 'left',
+                            tickSize: 5,
+                            tickPadding: 5,
+                            tickRotation: 0,
+                        }}
+                        enableGridX={false}
+                        enableGridY={false}
+                        pointSize={6}
+                        pointBorderWidth={2}
+                        pointLabelYOffset={-16}
+                        enableArea={true}
+                        areaOpacity={0.3}
+                        useMesh={true}
 
-                        <Area type="monotone" dataKey="temp" stroke="#82ca9d" fillOpacity={1} fill="url(#colorPv)" />
-                    </AreaChart>
-                </div>
-
-            </div >
+                        defs={[
+                            linearGradientDef('gradientA', [
+                                { offset: 0, color: 'inherit' },
+                                { offset: 100, color: 'inherit', opacity: 0 },
+                            ]),
+                        ]}
+                        fill={[{ match: '*', id: 'gradientA' }]}
+                    />
+                </motion.div>
+            </motion.div >
         )
 
     }
