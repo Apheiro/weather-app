@@ -2,25 +2,32 @@
     display: flex;
     justify-content: space-between;
     gap: 20px;
+    color: white;
 }
 
 .info {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(100px, 160px));
-    grid-template-rows: [first] 80px repeat(2, minmax(100px, 160px));
-    grid-template-areas:
-        ". header header"
-        "visibility humidity windSpeed"
-        "feelsLike pressure uvIndex";
+    display: flex;
+    flex-direction: column;
+    max-width: 520px;
+    width: 100%;
     gap: 20px;
-    min-width: 426px;
+}
+
+.infoGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(116px, 1fr));
+    grid-template-rows: auto;
+    gap: 20px;
 }
 
 .hour {
-    grid-area: header;
     align-items: center;
     justify-content: center;
     white-space: nowrap;
+    max-height: 80px;
+    max-width: 340px;
+    align-self: end;
+    width: 100%;
 }
 
 .hour h2 {
@@ -32,45 +39,18 @@
     min-height: 50px;
 }
 
-.visibility {
-    grid-area: visibility;
-    align-items: center;
-    justify-content: center;
-}
-
-.humidity {
-    grid-area: humidity;
-    align-items: center;
-    justify-content: center;
-}
-
-.windSpeed {
-    grid-area: windSpeed;
-    align-items: center;
-    justify-content: center;
-}
-
-.feelsLike {
-    grid-area: feelsLike;
-    align-items: center;
-    justify-content: center;
-}
-
-.pressure {
-    grid-area: pressure;
-    align-items: center;
-    justify-content: center;
-}
-
-.uvIndex {
-    grid-area: uvIndex;
-    align-items: center;
-    justify-content: center;
-}
-
 .cardInfoText {
+    align-items: center;
+    justify-content: center;
+    transition: transform cubic-bezier(0.54, 0.81, 0.5, 1.76) 0.25s !important;
+    cursor: pointer;
     gap: 15px;
     flex-direction: column;
+    max-height: 160px;
+}
+
+.cardInfoText:hover {
+    transform: scale(1.1) !important;
 }
 
 .cardInfoText p {
@@ -146,4 +126,106 @@
     align-self: center;
     max-width: 310px;
     max-height: 230px;
+}
+
+#inputForm {
+    color: white;
+}
+
+@media (max-width:1280px) {
+    .todayData {
+        gap: 10px;
+    }
+
+    .todayLocation {
+        font-size: 15px;
+    }
+
+    .todayTemperature {
+        font-size: 30px;
+    }
+
+    .todayWeather {
+        font-size: 30px;
+    }
+
+    .todayCard {
+        padding: 15px;
+    }
+
+    .todayCard img {
+        align-self: center;
+        max-width: 210px;
+        max-height: 210px;
+    }
+
+    .searchFromCard input {
+        font-size: 15px;
+    }
+
+    .info {
+        gap: 10px;
+    }
+
+    .hour h2 {
+        font-size: 30px;
+    }
+
+    .infoGrid {
+        gap: 10px;
+        grid-template-columns: repeat(auto-fill, minmax(95px, 1fr));
+    }
+
+    .cardInfoText p {
+        font-size: 15px;
+    }
+}
+
+@media (max-width:1100px) {
+    .appContainer {
+        gap: 10px;
+    }
+
+    .hour {
+        max-width: 100%;
+    }
+
+    .todayData {
+        display: grid;
+        justify-items: center;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, fit-content);
+    }
+
+    .searchFromCard {
+        grid-area: 1/1/1/3;
+    }
+
+    .infoGrid {
+        grid-template-columns: repeat(auto-fill, minmax(123px, 1fr));
+    }
+}
+
+@media (max-width:810px) {
+    .todayData {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .searchFromCard {
+        order: 0;
+    }
+
+    .todayCard {
+        order: 1;
+    }
+
+    .info {
+        order: 2;
+    }
+
+    .info {
+        gap: 10px;
+    }
 }

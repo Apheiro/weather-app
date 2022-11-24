@@ -1,11 +1,13 @@
 .popupInfo {
-    position: absolute;
+    position: fixed;
     backdrop-filter: blur(5px);
-    background-color: rgba(0, 0, 0, 0.336);
+    background-color: rgba(0, 0, 0, 0.404);
     top: 0px;
-    left: 0px;
     bottom: 0px;
+    left: 0px;
     right: 0px;
+    /* width: 100%;
+    height: 100%; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -73,4 +75,51 @@
 .moreInfo svg {
     width: 50px;
     height: 50px;
+}
+
+@media (max-width:700px) {
+    .moreInfoCard {
+        backdrop-filter: blur(11px);
+        border-radius: 20px;
+        max-width: unset;
+        max-height: unset;
+        width: fit-content;
+        height: fit-content;
+        padding: 25px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .basicInfo {
+        padding: 20px;
+        width: 100%;
+    }
+
+    .basicInfo h2 {
+        font-size: 20px;
+    }
+
+    .basicInfo p {
+        font-size: 20px;
+    }
+
+    .moreInfo {
+        gap: 10px;
+        padding: 20px;
+        width: 100%;
+    }
+
+    .moreInfo h2 {
+        font-size: 20px;
+    }
+
+    .moreInfo p {
+        gap: 10px;
+        font-size: 15px;
+    }
+
+    .moreInfo svg {
+        width: 40px;
+        height: 40px;
+    }
 }

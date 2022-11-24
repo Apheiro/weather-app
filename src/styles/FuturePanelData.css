@@ -8,6 +8,7 @@
     height: 100%;
     flex-direction: column;
     justify-content: space-between;
+    gap: 20px;
 }
 
 .futureDayDataCard {
@@ -22,6 +23,12 @@
     padding: 25px;
     display: flex;
     border-radius: 20px;
+    transition: transform cubic-bezier(0.54, 0.81, 0.53, 1.5) 0.25s !important;
+    cursor: pointer;
+}
+
+.futureDayDataCard:hover {
+    transform: scale(0.95) !important;
 }
 
 .futureDayDataCard img {
@@ -46,7 +53,6 @@
 .switchesBtnsContainer {
     display: flex;
     justify-content: space-between;
-    gap: 25px;
 }
 
 .formatUnitForm {
@@ -96,4 +102,28 @@
     display: flex;
     gap: 25px;
     overflow-x: overlay;
+    overflow-y: hidden;
+}
+
+@media (max-width:1280px) {
+    .futurePanelDataCard {
+        padding: 15px;
+    }
+
+    .futureDayDataCard {
+        padding: 15px;
+    }
+
+    .futureDataCardsContainer {
+        gap: 15px;
+    }
+}
+
+@media (max-width:340px) {
+    .switchesBtnsContainer {
+        flex-direction: column;
+        justify-content: unset;
+        align-items: start;
+        gap: 5px;
+    }
 }
