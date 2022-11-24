@@ -5,7 +5,7 @@
 ![](./src/assets/Preview/thumbnail.png)
 
 <p align="center">
-  Register form for <a href="https://www.theodinproject.com/">The Odin Project</a>
+  Weather App form for <a href="https://www.theodinproject.com/">The Odin Project</a>
 </p>
 
 ## Demo
