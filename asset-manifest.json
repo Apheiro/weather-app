@@ -1,0 +1,41 @@
+{
+  "files": {
+    "main.css": "/weather-app/static/css/main.2257ae40.css",
+    "main.js": "/weather-app/static/js/main.0a914cbb.js",
+    "static/js/227.ce6347e1.chunk.js": "/weather-app/static/js/227.ce6347e1.chunk.js",
+    "static/js/526.acbe520f.chunk.js": "/weather-app/static/js/526.acbe520f.chunk.js",
+    "static/js/232.60eb79e8.chunk.js": "/weather-app/static/js/232.60eb79e8.chunk.js",
+    "static/js/237.5ea6f31d.chunk.js": "/weather-app/static/js/237.5ea6f31d.chunk.js",
+    "static/media/cloud.png": "/weather-app/static/media/cloud.9c60ac18716ff4271261.png",
+    "static/media/cloud5.png": "/weather-app/static/media/cloud5.2e4167036744058574da.png",
+    "static/media/cloud4.png": "/weather-app/static/media/cloud4.3da71aa69a3106ff446c.png",
+    "static/media/cloud2.png": "/weather-app/static/media/cloud2.89f692334811453946b7.png",
+    "static/media/sun5.png": "/weather-app/static/media/sun5.a993fca85d1c56f57196.png",
+    "static/media/cloud1.png": "/weather-app/static/media/cloud1.b14f90377bf72a799321.png",
+    "static/media/sun3.png": "/weather-app/static/media/sun3.4ebc4fc610660aff3908.png",
+    "static/media/sun1.png": "/weather-app/static/media/sun1.fc4a47d5b98992101652.png",
+    "static/media/cloud3.png": "/weather-app/static/media/cloud3.1af6fd064ac013576c99.png",
+    "static/media/sun2.png": "/weather-app/static/media/sun2.a0b59df8a23917e58573.png",
+    "static/media/sun6.png": "/weather-app/static/media/sun6.029ab25f8f90f676f66f.png",
+    "static/media/sun4.png": "/weather-app/static/media/sun4.4e125394bcfe345d371b.png",
+    "static/media/moon1.png": "/weather-app/static/media/moon1.dea69b782d0035cdce8b.png",
+    "static/media/moon5.png": "/weather-app/static/media/moon5.79d790cea69f54852912.png",
+    "static/media/moon3.png": "/weather-app/static/media/moon3.cac5c4815f6a51d6f0c5.png",
+    "static/media/moon2.png": "/weather-app/static/media/moon2.aa80547c9351530cc2c8.png",
+    "static/media/moon4.png": "/weather-app/static/media/moon4.fca86bd156a858e42fe7.png",
+    "static/media/moon6.png": "/weather-app/static/media/moon6.0de0afe3566d7911a87f.png",
+    "static/media/moon.png": "/weather-app/static/media/moon.ff0c0fe8bef2ff756f99.png",
+    "static/media/sun.png": "/weather-app/static/media/sun.0e25fd3419e028a62485.png",
+    "index.html": "/weather-app/index.html",
+    "main.2257ae40.css.map": "/weather-app/static/css/main.2257ae40.css.map",
+    "main.0a914cbb.js.map": "/weather-app/static/js/main.0a914cbb.js.map",
+    "227.ce6347e1.chunk.js.map": "/weather-app/static/js/227.ce6347e1.chunk.js.map",
+    "526.acbe520f.chunk.js.map": "/weather-app/static/js/526.acbe520f.chunk.js.map",
+    "232.60eb79e8.chunk.js.map": "/weather-app/static/js/232.60eb79e8.chunk.js.map",
+    "237.5ea6f31d.chunk.js.map": "/weather-app/static/js/237.5ea6f31d.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2257ae40.css",
+    "static/js/main.0a914cbb.js"
+  ]
+}
