@@ -6,6 +6,9 @@ import { IconSquareGithub } from '../assets/imports'
 import Spline from '@splinetool/react-spline';
 import uniqid from 'uniqid'
 import LoadingScreen from './LoadingScreen'
+import { AnimatePresence } from 'framer-motion'
+
+
 
 import {
   cloud, sun, sCloud,
@@ -60,7 +63,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    this.getData('metric')
+    this.getData()
   }
 
   changeUnitMeasure(unit) {
@@ -125,20 +128,30 @@ class App extends React.Component {
     })
   }
 
+
   render() {
+
     return (
       <div className="App">
-        <Spline className="background" scene="https://prod.spline.design/2Yx8sTuTP47sABzS/scene.splinecode" />
-        <div className="appContainer">
-          <a className='github' href="https://github.com/Apheiro/weather-app">
-            <IconSquareGithub width='50px' height='50px' />
-            <h2>Apheiros</h2>
-          </a>
-          <div className='weatherAppContainer'>
-            <TodayData data={this.state.info} setLocation={this.setLocation} getData={this.getData} hourly={this.state.hourly} />
-            <FuturePanelData daily={this.state.daily} hourly={this.state.hourly} changeUnitMeasure={this.changeUnitMeasure} getData={this.getData} />
-          </div>
-        </div>
+        <Spline className="background" scene="https://prod.spline.design/ySuj4QjQEEt7a1Wi/scene.splinecode" />
+        <AnimatePresence>
+          {!!this.state.daily.length ? <>
+            <div className="appContainer">
+              <a className='github' href="https://github.com/Apheiro/weather-app">
+                <IconSquareGithub width='50px' height='50px' />
+                <h2>Apheiros</h2>
+              </a>
+              <div className='weatherAppContainer'>
+                <TodayData data={this.state.info} setLocation={this.setLocation} getData={this.getData} hourly={this.state.hourly} />
+                <FuturePanelData daily={this.state.daily} hourly={this.state.hourly} changeUnitMeasure={this.changeUnitMeasure} getData={this.getData} />
+              </div>
+            </div>
+          </> : <LoadingScreen />
+          }
+        </AnimatePresence>
+
+
+
       </div>
     );
   }
