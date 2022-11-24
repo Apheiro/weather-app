@@ -9,6 +9,8 @@ import {
     mElectricStorm, mWind, cBroken,
     sShowerRain, mShowerRain,
 } from '../assets/imports'
+import { motion, AnimatePresence } from 'framer-motion'
+
 
 class FuturePanelData extends React.Component {
     constructor(props) {
@@ -56,7 +58,9 @@ class FuturePanelData extends React.Component {
     render() {
         return (
             <div className='futurePanelData'>
-                {this.state.popupShow ? <PopupInfo formatDateType={this.state.format} formatDate={this.props[this.state.format]} removePopup={this.removePopup} uniqKey={this.state.popupAttribute} /> : null}
+                <AnimatePresence>
+                    {this.state.popupShow ? <PopupInfo formatDateType={this.state.format} formatDate={this.props[this.state.format]} removePopup={this.removePopup} uniqKey={this.state.popupAttribute} /> : null}
+                </AnimatePresence>
                 <div className='futurePanelDataCard cardStyle'>
                     <div className='switchesBtnsContainer'>
                         <form action="" className='formatUnitForm'>
@@ -72,39 +76,66 @@ class FuturePanelData extends React.Component {
                             <label htmlFor="hourly">Hourly</label>
                         </form>
                     </div>
-
-                    <div className='futureDataCardsContainer'>
-                        {
-                            this.props[this.state.format].map((day) => {
-                                if (this.state.format == 'daily') {
-                                    return (
-                                        <div key={`${day.uniqid}`} id={`${day.uniqid}`} className='futureDayDataCard' onClick={this.addPopup}>
-                                            <h2>{format(fromUnixTime(day.dt), 'EEEE dd')}</h2>
-                                            <img src={this.imagesID[day.weather[0].icon]} alt="" />
-                                            <h3>{day.temp.min} - {day.temp.max}</h3>
-                                            <div>
-                                                <p>Humidity {day.humidity}%</p>
-                                                <p>Pressure {day.pressure} hPa</p>
-                                                <p>WindSpeed {day.wind_speed}</p>
-                                            </div>
-                                        </div>
-                                    )
-                                } else if (this.state.format == 'hourly') {
-                                    return <div key={`${day.uniqid}`} id={`${day.uniqid}`} className='futureDayDataCard' onClick={this.addPopup} >
-                                        <h2>{format(fromUnixTime(day.dt), 'hh:mm a')}</h2>
-                                        <img src={this.imagesID[day.weather[0].icon]} alt="" />
-                                        <h3>{day.temp}</h3>
-                                        <div>
-                                            <p>Humidity {day.humidity}%</p>
-                                            <p>Pressure {day.pressure} hPa</p>
-                                            <p>WindSpeed {day.wind_speed}</p>
-                                        </div>
-                                    </div>
-                                }
-                            })
-
-                        }
-                    </div>
+                    <motion.div className='futureDataCardsContainer' >
+                        <AnimatePresence mode='wait'>
+                            {
+                                this.props[this.state.format].map((day, index) => {
+                                    let enter = {
+                                        opacity: 1,
+                                        scale: 1,
+                                        transition: {
+                                            delay: 0.05 * index,
+                                            duration: 0.1,
+                                            ease: [0.60, -0.67, 0.30, 1.67]
+                                        }
+                                    }
+                                    let exit = {
+                                        opacity: 0,
+                                        scale: 0.5,
+                                        transition: {
+                                            delay: 0.03 * index,
+                                            duration: 0.3,
+                                            ease: [0.60, -0.67, 0.30, 1.67]
+                                        }
+                                    }
+                                    let initial = {
+                                        opacity: 0,
+                                        scale: 0.5,
+                                        transition: {
+                                            when: "afterChildren",
+                                        }
+                                    }
+                                    if (this.state.format == 'daily') {
+                                        return (
+                                            <motion.div key={day.uniqid} id={day.uniqid} className='futureDayDataCard' onClick={this.addPopup} variants={this.bigger} initial={initial} animate={enter} exit={exit}>
+                                                <h2>{format(fromUnixTime(day.dt), 'EEEE dd')}</h2>
+                                                <img src={this.imagesID[day.weather[0].icon]} alt="" />
+                                                <h3>{day.temp.min} - {day.temp.max}</h3>
+                                                <div>
+                                                    <p>Humidity {day.humidity}%</p>
+                                                    <p>Pressure {day.pressure} hPa</p>
+                                                    <p>WindSpeed {day.wind_speed}</p>
+                                                </div>
+                                            </motion.div>
+                                        )
+                                    } else if (this.state.format == 'hourly') {
+                                        return (
+                                            <motion.div key={day.uniqid} id={day.uniqid} className='futureDayDataCard' onClick={this.addPopup} variants={this.smaller} initial={initial} animate={enter} exit={exit}>
+                                                <h2>{format(fromUnixTime(day.dt), 'hh:mm a')}</h2>
+                                                <img src={this.imagesID[day.weather[0].icon]} alt="" />
+                                                <h3>{day.temp}</h3>
+                                                <div>
+                                                    <p>Humidity {day.humidity}%</p>
+                                                    <p>Pressure {day.pressure} hPa</p>
+                                                    <p>WindSpeed {day.wind_speed}</p>
+                                                </div>
+                                            </motion.div>
+                                        )
+                                    }
+                                })
+                            }
+                        </AnimatePresence>
+                    </motion.div>
                 </div>
 
             </div >

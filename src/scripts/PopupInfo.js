@@ -2,7 +2,6 @@ import react from 'react'
 import '../styles/PopupInfo.css'
 import uniqid from 'uniqid'
 import { fromUnixTime, format } from 'date-fns'
-// import format from 'date-fns/format'
 import {
     cloud, sun, sCloud,
     sRain, sSnow, sElectricStorm,
@@ -16,6 +15,7 @@ import {
     IconMoon, IconSun, IconWiRain, IconWiCloud,
     IconEye, IconWiThermometerExterior
 } from '../assets/imports'
+import { motion } from 'framer-motion'
 
 class PopupInfo extends react.Component {
     constructor(props) {
@@ -25,21 +25,38 @@ class PopupInfo extends react.Component {
             '11d': sElectricStorm, '13d': sSnow, '50d': sWind, '01n': moon, '02n': mCloud, '03n': cloud,
             '04n': cBroken, '09n': mShowerRain, '10n': mRain, '11n': mElectricStorm, '13n': mSnow, '50n': mWind,
         }
+        this.initial = {
+            scale: 0.6,
+            opacity: 0,
+        }
+        this.enter = {
+            scale: 1,
+            opacity: 1,
+            transition: {
+                duration: 0.4,
+                ease: [0.60, -0.67, 0.30, 1.67]
+            }
+        }
+        this.exit = {
+            scale: 0.6,
+            opacity: 0,
+            transition: {
+                duration: 0.4,
+                ease: [0.60, -0.67, 0.30, 1.67]
+            }
+        }
     }
-
 
     render() {
         const { uniqKey, formatDate, formatDateType } = this.props;
-
         return (
-
-            < div className='popupInfo' onClick={this.props.removePopup} >
+            < motion.div className='popupInfo' onClick={this.props.removePopup} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
                 {
                     formatDate.map((element) => {
                         if (formatDateType == 'daily') {
                             if (element.uniqid == uniqKey) {
                                 return (
-                                    <div key={uniqid()} className='moreInfoCard'>
+                                    <motion.div key={uniqid()} className='moreInfoCard' initial={this.initial} animate={this.enter} exit={this.exit}>
                                         <div className='basicInfo'>
                                             <h2>{format(fromUnixTime(element.dt), 'PPPP')}</h2>
                                             <img src={this.imagesID[element.weather[0].icon]} alt="" />
@@ -54,14 +71,13 @@ class PopupInfo extends react.Component {
                                             <p><IconMoon />temp night: {element.temp.night}</p>
                                             <p><IconWiHot />uv index: {element.uvi}</p>
                                         </div>
-                                    </div>
+                                    </motion.div>
                                 )
-
                             }
                         } else if (formatDateType == 'hourly') {
                             if (element.uniqid == uniqKey) {
                                 return (
-                                    <div key={uniqid()} className='moreInfoCard'>
+                                    <motion.div key={uniqid()} className='moreInfoCard' initial={this.initial} animate={this.enter} exit={this.exit}>
                                         <div className='basicInfo'>
                                             <h2>{format(fromUnixTime(element.dt), 'hh:mm a')}</h2>
                                             <img src={this.imagesID[element.weather[0].icon]} alt="" />
@@ -76,16 +92,13 @@ class PopupInfo extends react.Component {
                                             <p><IconWiRain></IconWiRain> precipitation: {element.pop}</p>
                                             <p><IconWiHot />uv index: {element.uvi}</p>
                                         </div>
-
-
-                                    </div>
+                                    </motion.div>
                                 )
                             }
                         }
                     })
                 }
-
-            </div >
+            </motion.div >
         )
 
     }
