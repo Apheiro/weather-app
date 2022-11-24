@@ -47,7 +47,6 @@ class GraphicData extends react.Component {
                             stacked: true,
                             reverse: false
                         }}
-                        colors={{ scheme: 'pink_yellowGreen' }}
                         yFormat=" >-.2f"
                         curve="monotoneX"
                         axisTop={null}

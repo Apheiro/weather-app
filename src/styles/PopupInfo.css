@@ -1,13 +1,11 @@
 .popupInfo {
     position: fixed;
     backdrop-filter: blur(5px);
-    background-color: rgba(0, 0, 0, 0.404);
+    background-color: rgba(0, 0, 0, 0.3);
     top: 0px;
     bottom: 0px;
     left: 0px;
     right: 0px;
-    /* width: 100%;
-    height: 100%; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -49,7 +47,7 @@
 }
 
 .moreInfo {
-    background-color: rgba(0, 0, 0, 0.356);
+    background-color: rgba(0, 0, 0, 0.3);
     border-radius: 20px;
     display: flex;
     flex-direction: column;
