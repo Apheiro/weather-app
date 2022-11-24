@@ -1,7 +1,7 @@
 {
   "name": "weather-app",
   "version": "0.1.0",
-  "homepage": "https://gitname.github.io/react-gh-pages",
+  "homepage": "https://apheiro.github.io/weather-app",
   "private": true,
   "dependencies": {
     "@nivo/core": "^0.80.0",
