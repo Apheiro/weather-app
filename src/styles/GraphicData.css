@@ -1,7 +1,7 @@
 .graphicContainer {
     position: fixed;
+    background-color: rgba(0, 0, 0, 0.438);
     backdrop-filter: blur(5px);
-    background-color: rgba(0, 0, 0, 0.3);
     top: 0px;
     left: 0px;
     bottom: 0px;
@@ -14,8 +14,8 @@
 }
 
 .graphicContainerCard {
-    backdrop-filter: blur(11px);
     border-radius: 20px;
+    background: rgb(255, 255, 255);
     max-width: 700px;
     max-height: 400px;
     width: 100%;

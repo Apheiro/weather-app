@@ -53,30 +53,30 @@ class TodayData extends React.Component {
             "axis": {
                 "domain": {
                     "line": {
-                        "stroke": "#ffffff",
+                        "stroke": "#333333",
                         "strokeWidth": 1
                     }
                 },
                 "legend": {
                     "text": {
                         "fontSize": 12,
-                        "fill": "#ffffff"
+                        "fill": "#333333"
                     }
                 },
                 "ticks": {
                     "line": {
-                        "stroke": "#ffffff",
+                        "stroke": "#333333",
                         "strokeWidth": 1
                     },
                     "text": {
                         "fontSize": 11,
-                        "fill": "#ffffff"
+                        "fill": "#333333"
                     }
                 }
             },
             "grid": {
                 "line": {
-                    "stroke": "#ffffff",
+                    "stroke": "#333333",
                     "strokeWidth": 1
                 }
             },
@@ -104,34 +104,34 @@ class TodayData extends React.Component {
                     "fontSize": 13,
                     "fill": "#333333",
                     "outlineWidth": 2,
-                    "outlineColor": "#ffffff",
+                    "outlineColor": "#333333",
                     "outlineOpacity": 1
                 },
                 "link": {
                     "stroke": "#000000",
                     "strokeWidth": 1,
                     "outlineWidth": 2,
-                    "outlineColor": "#ffffff",
+                    "outlineColor": "#333333",
                     "outlineOpacity": 1
                 },
                 "outline": {
                     "stroke": "#000000",
                     "strokeWidth": 2,
                     "outlineWidth": 2,
-                    "outlineColor": "#ffffff",
+                    "outlineColor": "#333333",
                     "outlineOpacity": 1
                 },
                 "symbol": {
                     "fill": "#000000",
                     "outlineWidth": 2,
-                    "outlineColor": "#ffffff",
+                    "outlineColor": "#333333",
                     "outlineOpacity": 1
                 }
             },
             "tooltip": {
                 "container": {
                     "background": "#5c5c5c",
-                    "color": "#ffffff",
+                    "color": "#333333",
                     "fontSize": 15
                 },
                 "basic": {},

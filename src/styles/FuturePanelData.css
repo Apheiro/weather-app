@@ -19,8 +19,9 @@
     gap: 10px;
     justify-content: space-between;
     align-items: center;
-    background: rgba(0, 0, 0, 0.3);
-    padding: 25px;
+    background: #ffffff;
+    box-shadow: rgb(0, 0, 0) 0px 0px 25px -15px;
+    padding: 15px;
     display: flex;
     border-radius: 20px;
     transition: transform cubic-bezier(0.54, 0.81, 0.53, 1.5) 0.25s !important;
@@ -38,14 +39,16 @@
 
 .futureDayDataCard div {
     white-space: nowrap;
+    font-size: 13px;
 }
 
 .futureDayDataCard h3 {
-    font-size: 20px;
+    font-size: 16px;
     text-align: center;
 }
 
 .futureDayDataCard h2 {
+    font-size: 20px;
     align-self: start;
     white-space: nowrap;
 }
@@ -56,14 +59,12 @@
 }
 
 .formatUnitForm {
-    backdrop-filter: blur(11px);
     border-radius: 10px;
     display: flex;
     align-items: center;
 }
 
 .formatTimeForm {
-    backdrop-filter: blur(11px);
     border-radius: 10px;
     display: flex;
     align-items: center;
@@ -81,9 +82,10 @@
 }
 
 .formatTimeForm input[type="radio"]:checked+label {
-    background-color: rgba(255, 255, 255, 0.137);
+    background: #ffffff;
     border-radius: 10px;
     padding: 10px;
+    box-shadow: black 0px 0px 20px -9px;
 }
 
 .formatUnitForm label {
@@ -93,12 +95,14 @@
 }
 
 .formatUnitForm input[type="radio"]:checked+label {
-    background-color: rgba(255, 255, 255, 0.137);
+    background: #ffffff;
     border-radius: 10px;
     padding: 10px;
+    box-shadow: black 0px 0px 20px -9px;
 }
 
 .futureDataCardsContainer {
+    padding: 16px;
     display: flex;
     gap: 25px;
     overflow-x: overlay;

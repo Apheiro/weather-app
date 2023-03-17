@@ -66,10 +66,7 @@ class App extends React.Component {
   changeUnitMeasure(unit) {
     this.setState({
       unitOfMeasure: unit
-    })
-    setTimeout(() => {
-      console.log(this.state.unitOfMeasure)
-    }, 0);
+    }, () => { console.log(this.state.unitOfMeasure) })
   }
 
   async getData(e) {
@@ -130,7 +127,7 @@ class App extends React.Component {
 
     return (
       <div className="App">
-        <div className="background"><img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2F58%2F6e%2F51%2F586e51559dc40f48cd8ce65af9c1522f.gif&f=1&nofb=1&ipt=c298129c39d8fa5dd8293245986ac07095604cdc5e5545bdb48ed5fab87e4fd0&ipo=images" alt="" srcset="" /></div>
+        {/* <div className="background"><img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2F58%2F6e%2F51%2F586e51559dc40f48cd8ce65af9c1522f.gif&f=1&nofb=1&ipt=c298129c39d8fa5dd8293245986ac07095604cdc5e5545bdb48ed5fab87e4fd0&ipo=images" alt="" srcset="" /></div> */}
         <AnimatePresence>
           {!!this.state.daily.length ? <>
             <div className="appContainer">

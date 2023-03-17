@@ -2,7 +2,6 @@
     display: flex;
     justify-content: space-between;
     gap: 20px;
-    color: white;
 }
 
 .info {
@@ -59,16 +58,14 @@
 }
 
 .cardStyle {
-    background: rgba(0, 0, 0, 0.164);
-    backdrop-filter: blur(11px);
+    background: #ffffff;
     padding: 25px;
     display: flex;
     border-radius: 20px;
 }
 
 .searchFromCard {
-    background: rgba(0, 0, 0, 0.164);
-    backdrop-filter: blur(11px);
+    background: rgb(255, 255, 255);
     padding: 15px;
     display: flex;
     border-radius: 20px;
@@ -88,7 +85,7 @@
 }
 
 .searchFromCard input::placeholder {
-    color: rgba(255, 255, 255, 0.589);
+    color: rgba(0, 0, 0, 0.589);
 }
 
 .searchFromCard button {
@@ -96,6 +93,11 @@
     border: none;
     width: 45px;
     height: 45px;
+    cursor: pointer;
+}
+
+.searchFromCard button svg {
+    fill: #1f1f1f;
 }
 
 .todayCard {
@@ -133,7 +135,7 @@
 }
 
 #inputForm {
-    color: white;
+    color: #1f1f1f;
 }
 
 @media (max-width:1280px) {

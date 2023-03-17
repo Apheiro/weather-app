@@ -8,6 +8,7 @@
     font-weight: 800;
     scrollbar-width: thin;
     user-select: none;
+    color: #333333;
     -webkit-tap-highlight-color: transparent;
 }
 
@@ -17,7 +18,7 @@ html {
 }
 
 body {
-    background-color: rgb(58, 58, 58);
+    background: #f1f1f1;
 }
 
 .background img {
@@ -33,7 +34,6 @@ body {
     width: 100vw;
     height: 100vh;
     justify-content: center;
-    color: white;
 }
 
 .appContainer {
@@ -42,7 +42,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 15px;
+    padding: 35px;
     gap: 10px;
 }
 
@@ -62,7 +62,6 @@ body {
     align-items: center;
     gap: 10px;
     text-decoration: none;
-    color: white;
     font-size: 17px;
     width: fit-content;
     z-index: 1;
@@ -75,12 +74,12 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-    background: rgba(255, 255, 255, 0.137);
+    background: rgba(0, 0, 0, 0.137);
     border-radius: 20px;
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: rgba(255, 255, 255, 0.39);
+    background-color: rgba(0, 0, 0, 0.39);
     height: 10px;
     border-radius: 20px;
 }
@@ -95,7 +94,6 @@ body {
         width: 100%;
         height: 100%;
         justify-content: center;
-        color: white;
     }
 
     .appContainer {

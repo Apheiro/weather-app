@@ -1,7 +1,7 @@
 .popupInfo {
     position: fixed;
-    backdrop-filter: blur(5px);
     background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(5px);
     top: 0px;
     bottom: 0px;
     left: 0px;
@@ -14,7 +14,7 @@
 }
 
 .moreInfoCard {
-    backdrop-filter: blur(11px);
+    background: #ffffff;
     border-radius: 20px;
     max-width: 700px;
     max-height: 500px;
@@ -47,13 +47,13 @@
 }
 
 .moreInfo {
-    background-color: rgba(0, 0, 0, 0.3);
+    background: #ffffff;
+    box-shadow: #00000017 0px 0px 16px 0px;
     border-radius: 20px;
     display: flex;
     flex-direction: column;
     gap: 10px;
     width: 50%;
-    backdrop-filter: blur(10px);
     padding: 20px;
     justify-content: space-between;
 }
@@ -77,7 +77,6 @@
 
 @media (max-width:700px) {
     .moreInfoCard {
-        backdrop-filter: blur(11px);
         border-radius: 20px;
         max-width: unset;
         max-height: unset;

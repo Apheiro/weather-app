@@ -34,8 +34,6 @@ class FuturePanelData extends React.Component {
     changeUnit(e) {
         this.props.changeUnitMeasure(e.target.value);
         this.props.getData()
-        // console.log(e.target.value);
-        // console.log(e);
     }
 
     removePopup(e) {
